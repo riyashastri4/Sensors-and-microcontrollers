@@ -1,20 +1,27 @@
 
 /* script.js (ES modules) — Firestore-only program sharing */
 
-// ===== Firebase setup =====
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, serverTimestamp, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// 1) Replace with your Firebase config (Project Settings → General → Your apps → </> Web app)
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT",
-  storageBucket: "YOUR_PROJECT.appspot.com", // not used here
-  messagingSenderId: "XXXX",
-  appId: "XXXX"
+  apiKey: "AIzaSyBgr4yFrnxNBxxRlsvcg_iocMNrWTQebgc",
+  authDomain: "sensors-and-microcontrollers.firebaseapp.com",
+  projectId: "sensors-and-microcontrollers",
+  storageBucket: "sensors-and-microcontrollers.firebasestorage.app",
+  messagingSenderId: "828861970951",
+  appId: "1:828861970951:web:d037f5c8883c538ae348a2",
+  measurementId: "G-FY2C840CJM"
 };
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 

@@ -104,10 +104,20 @@ footer a {
   nav {
     padding: 10px;
   }
-  /* Code Blocks */
-/* Code Blocks - Guaranteed Working Version */
+ .content-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 6px 6px 0px black;
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .content-box pre {
-  background-color: #f0f0f0 !important;  /* Light gray */
+  background-color: #f0f0f0 !important;
   padding: 15px !important;
   border-radius: 5px !important;
   overflow-x: auto !important;
@@ -118,8 +128,8 @@ footer a {
 
 .content-box code {
   background-color: transparent !important;
-  color: inherit !important;
 }
 }
+
 
 

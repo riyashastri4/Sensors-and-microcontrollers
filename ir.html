@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IR Sensor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="title-box">
+      <h1>IR Sensor</h1>
+    </div>
+
+    <div class="content-box">
+      <p>The IR sensor detects <b>obstacles</b> using infrared light. It is often used in line-following robots.</p>
+
+      <div class="sensor-images">
+        <img src="images/ir-sensor.jpg" alt="IR Sensor Module" width="250">
+        <img src="images/ir-circuit.png" alt="IR Circuit Diagram" width="350">
+      </div>
+
+      <h3>Arduino Code:</h3>
+      <pre><code>
+int irPin = 2;
+int ledPin = 13;
+
+void setup() {
+  pinMode(irPin, INPUT);
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int sensorValue = digitalRead(irPin);
+  
+  if(sensorValue == LOW) {
+    digitalWrite(ledPin, HIGH);
+    Serial.println("Obstacle detected!");
+  } else {
+    digitalWrite(ledPin, LOW);
+    Serial.println("No obstacle");
+  }
+  
+  delay(200);
+}
+
+      </code></pre>
+    </div>
+
+    <a href="index.html" class="btn">⬅ Back to Home</a>
+  </div>
+</body>
+</html>

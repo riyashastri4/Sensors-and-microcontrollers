@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultrasonic Sensor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="title-box">
+      <h1>Ultrasonic Sensor</h1>
+    </div>
+
+    <div class="content-box">
+      <p>The ultrasonic sensor measures <b>distance</b> using sound waves. It is widely used in robotics.</p>
+
+      <div class="sensor-images">
+        <img src="images/ultrasonic-sensor.jpg" alt="Ultrasonic Sensor Module" width="250">
+        <img src="images/ultrasonic-circuit.png" alt="Ultrasonic Circuit Diagram" width="350">
+      </div>
+
+      <h3>Arduino Code:</h3>
+      <pre><code>
+#define trigPin 9
+#define echoPin 10
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+}
+
+void loop() {
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  long duration = pulseIn(echoPin, HIGH);
+  long distance = duration * 0.034 / 2;
+
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+  delay(1000);
+}
+      </code></pre>
+    </div>
+
+    <a href="index.html" class="btn">⬅ Back to Home</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIR Sensor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="title-box">
+      <h1>PIR Sensor</h1>
+    </div>
+
+    <div class="content-box">
+      <p>The PIR sensor detects <b>motion</b> using infrared radiation. It is commonly used in security systems.</p>
+
+      <div class="sensor-images">
+        <img src="images/pir-sensor.jpg" alt="PIR Sensor Module" width="250">
+        <img src="images/pir-circuit.png" alt="PIR Circuit Diagram" width="350">
+      </div>
+
+      <h3>Arduino Code:</h3>
+      <pre><code>
+int pirPin = 2;
+int ledPin = 13;
+
+void setup() {
+  pinMode(pirPin, INPUT);
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int motion = digitalRead(pirPin);
+  
+  if(motion == HIGH) {
+    digitalWrite(ledPin, HIGH);
+    Serial.println("Motion detected!");
+  } else {
+    digitalWrite(ledPin, LOW);
+    Serial.println("No motion");
+  }
+  
+  delay(200);
+}
+
+      </code></pre>
+    </div>
+
+    <a href="index.html" class="btn">⬅ Back to Home</a>
+  </div>
+</body>
+</html>

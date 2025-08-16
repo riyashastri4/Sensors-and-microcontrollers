@@ -104,4 +104,22 @@ footer a {
   nav {
     padding: 10px;
   }
+  /* Code Blocks */
+.content-box pre {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  border-left: 4px solid #f4b942;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin: 20px 0;
 }
+
+.content-box code {
+  background: transparent;
+  font-family: inherit;
+}
+}
+
